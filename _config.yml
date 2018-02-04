@@ -23,9 +23,6 @@ url: "http://henriquetruta.com" # the base hostname & protocol for your site, e.
 twitter_username: henriquetruta
 github_username:  henriquetruta
 
-gem "github-pages", group: :jekyll_plugins
-
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
