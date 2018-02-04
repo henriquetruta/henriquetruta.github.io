@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Flat no more! Hierarchical Multitenancy in OpenStack
 date: '2017-02-17 21:40:24'
 ---

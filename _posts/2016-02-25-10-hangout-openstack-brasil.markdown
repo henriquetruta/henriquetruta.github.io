@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 10º Hangout OpenStack Brasil
 image: "/content/images/2016/02/Screenshot-from-2016-02-25-19-05-26.png"
 date: '2016-02-25 22:02:19'

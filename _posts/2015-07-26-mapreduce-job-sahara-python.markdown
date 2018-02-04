@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Launching a MapReduce Job in Sahara using python
 date: '2015-07-26 18:22:07'
 tags:
@@ -19,11 +18,11 @@ We'll show how to run a Wordcount Hadoop job through Sahara python API.
 This tutorial assumes you have:
 
 * A running Hadoop Cluster. A tutorial to launch one is available [here](http://docs.openstack.org/developer/sahara/devref/quickstart.html).
-* A Wordcount MapReduce Job Binary uploaded and a Job Template Created. The binary is available [here](https://github.com/openstack/sahara/tree/master/etc/edp-examples/edp-mapreduce) and the tutorial to create a template [here](http://docs.openstack.org/developer/sahara/horizon/dashboard.user.guide.html#job-binaries) 
+* A Wordcount MapReduce Job Binary uploaded and a Job Template Created. The binary is available [here](https://github.com/openstack/sahara/tree/master/etc/edp-examples/edp-mapreduce) and the tutorial to create a template [here](http://docs.openstack.org/developer/sahara/horizon/dashboard.user.guide.html#job-binaries)
 * A valid input Data Source, uploaded in Swift. Tutorial [here](http://docs.openstack.org/developer/sahara/horizon/dashboard.user.guide.html#data-sources)
 
 ## python-saharaclient
-Each OpenStack service has its own python client, that provides a Python API and a Command Line Interface. We'll need to have [python-saharaclient](https://github.com/openstack/python-saharaclient) client installed. 
+Each OpenStack service has its own python client, that provides a Python API and a Command Line Interface. We'll need to have [python-saharaclient](https://github.com/openstack/python-saharaclient) client installed.
 
 We recommend that you install the Master branch version, by doing:
 ```
@@ -48,20 +47,20 @@ $ sahara help
 ## Getting it done
 First, you must import some stuff and define the job and credentials variables. We are not using args, here. Just in-line code.
 ``` python
-# Auth Data                                                                 
-username = 'admin'                                                       
+# Auth Data
+username = 'admin'
 project_name = 'admin'
-project_id = 'bdbc102bcc8e41569b9a0cb8119ddd73'                                        
-password = "SuperSecret"                                                      
-auth_url = "http://keystone_url:5000/v2.0"                                     
-sahara_url = "http://sahara_url:8386/v1.1/%s" % project_id 
-# Job attributes                                                            
+project_id = 'bdbc102bcc8e41569b9a0cb8119ddd73'
+password = "SuperSecret"
+auth_url = "http://keystone_url:5000/v2.0"
+sahara_url = "http://sahara_url:8386/v1.1/%s" % project_id
+# Job attributes
 cluster_id = "814b6691-ea64-4898-98d4-052c1ef16456" # Get it at 'sahara cluster-list'
-job_id = "50e8d9b6-cf8c-41a2-9f73-808c4cef97ef" # 'sahara job-template-list'            
-container_out_name = "wordcount" # A valid swift container                                           
-input_ds_id = "2817b803-e8d9-480d-93d7-8710c62eabb3" # Input data source. Get it by 'sahara data-source-list'                      
-exec_date = datetime.now().strftime('%Y%m%d_%H%M%S') # We're using timestamp as the output name              
-output ="output_%s" % exec_date                                             
+job_id = "50e8d9b6-cf8c-41a2-9f73-808c4cef97ef" # 'sahara job-template-list'
+container_out_name = "wordcount" # A valid swift container
+input_ds_id = "2817b803-e8d9-480d-93d7-8710c62eabb3" # Input data source. Get it by 'sahara data-source-list'
+exec_date = datetime.now().strftime('%Y%m%d_%H%M%S') # We're using timestamp as the output name
+output ="output_%s" % exec_date
 ```
 You're done with configuration. The next step is instantiate python-saharaclient.
 
@@ -118,7 +117,7 @@ The full code shown in this example is available [here](https://www.dropbox.com/
 
 Did this work for you? If so, great. If it didn't, you can email :)
 
-######Helpful links:
+###### Helpful links:
 http://docs.openstack.org/developer/python-saharaclient/api.html#job-execution-ops
 http://docs.openstack.org/developer/sahara/restapi/rest\_api\_v1.1\_EDP.html#execute-job
 http://docs.openstack.org/developer/sahara/userdoc/edp.html

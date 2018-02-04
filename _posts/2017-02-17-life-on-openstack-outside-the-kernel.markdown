@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Life on OpenStack outside the Kernel
 date: '2017-02-17 21:41:29'
 ---

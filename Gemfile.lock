@@ -233,7 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-theme-cayman
+  jekyll-remote-theme
   tzinfo-data
 
 BUNDLED WITH

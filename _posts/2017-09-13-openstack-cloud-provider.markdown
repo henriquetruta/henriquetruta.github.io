@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Setting OpenStack as a Kubernetes Cloud Provider
 date: '2017-09-13 16:25:26'
 ---

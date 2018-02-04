@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Hybrid federation on Kubernetes
 date: '2017-03-21 18:40:59'
 ---

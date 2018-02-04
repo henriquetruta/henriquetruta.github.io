@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Creating a Kubernetes Cluster on-prem in Ubuntu
 date: '2017-09-07 23:49:41'
 ---
@@ -28,7 +27,7 @@ cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update
-apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni 
+apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni
 ```
 
 ### Run `kubeadm`
@@ -54,7 +53,7 @@ The output of `init` should look like this:
 
 #### Accessing the cluster
 
-Once completed the `init`, the cluster should be ready and accessible via [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl-overview/), the Kubernetes CLI. By default, it looks for credentials in `~/.kube/config` file. If you don't have anything in there, you should hit an error. 
+Once completed the `init`, the cluster should be ready and accessible via [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl-overview/), the Kubernetes CLI. By default, it looks for credentials in `~/.kube/config` file. If you don't have anything in there, you should hit an error.
 
 The easisest way to get a credentials file is copying the `admin.conf` created by `kubeadm` and place it in the default location. Do it with:
 
@@ -67,7 +66,7 @@ Now, you should be able to run commands such as `kubectl get pods --all-namespac
 
 ### Tainting the Master node
 
-As stated before, master node should not receive nothing but the main Kubernetes pods, such as `api-server`,  `kube-controller-manager`, `cni`, `kube-dns` and others. But as this is a dev environment, there should be no problem in marking this node as schedulable, so you can have a single node fully working cluster. 
+As stated before, master node should not receive nothing but the main Kubernetes pods, such as `api-server`,  `kube-controller-manager`, `cni`, `kube-dns` and others. But as this is a dev environment, there should be no problem in marking this node as schedulable, so you can have a single node fully working cluster.
 
 Enable scheduling of regular pods in the master with:
 
